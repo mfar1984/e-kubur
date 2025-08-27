@@ -1,0 +1,29 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS + canonical host (www.ppjub.com.my)
+RewriteCond %{REQUEST_URI} ^/.well-known/acme-challenge/ - [L]
+RewriteCond %{HTTP_HOST} !^www\.ppjub\.com\.my$ [NC,OR]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://www.ppjub.com.my%{REQUEST_URI} [R=301,L]
+
+# Default document (hide index.php)
+DirectoryIndex index.php
+
+# Serve existing files/directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Pretty URLs for PHP files → /path maps to /path.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# Fallback to index.php for non-existing paths
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]

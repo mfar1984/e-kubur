@@ -1,0 +1,175 @@
+/* Import Figtree font */
+@import url('https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "corporate";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(93% 0 0);
+  --color-base-300: oklch(86% 0 0);
+  --color-base-content: oklch(22.389% 0.031 278.072);
+  --color-primary: oklch(58% 0.158 241.966);
+  --color-primary-content: oklch(100% 0 0);
+  --color-secondary: oklch(55% 0.046 257.417);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(60% 0.118 184.704);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(0% 0 0);
+  --color-neutral-content: oklch(100% 0 0);
+  --color-info: oklch(60% 0.126 221.723);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(62% 0.194 149.214);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(85% 0.199 91.936);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(0% 0 0);
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.1875rem;
+  --size-field: 0.1875rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
+
+/* Global styles for Material Icons */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Standardized Material Icons sizes for navigation and UI */
+.material-icons.text-xs {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-sm {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-lg {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-xl {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-2xl {
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-4xl {
+  font-size: 36px !important;
+  line-height: 1 !important;
+}
+
+/* Custom sizes for specific use cases */
+.material-icons.text-\[8px\] {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-\[10px\] {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.material-icons.text-\[11px\] {
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+/* Overview page specific icon sizing */
+body[data-theme="corporate"] .material-icons.text-sm {
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+body[data-theme="corporate"] .material-icons.text-2xl {
+  font-size: 32px !important;
+  line-height: 1 !important;
+}
+
+body[data-theme="corporate"] .material-icons.text-4xl {
+  font-size: 48px !important;
+  line-height: 1 !important;
+}
+
+/* Force larger icons for navigation and topbar ONLY - HIGH PRIORITY */
+nav .material-icons,
+nav .material-icons.text-sm,
+nav .material-icons.text-lg,
+nav .material-icons.text-xl,
+nav .material-icons.text-xs,
+nav .material-icons.text-\[10px\],
+nav .material-icons.text-\[16px\],
+.bg-white.border-b.border-gray-200 .material-icons,
+.bg-white.border-b.border-gray-200 .material-icons.text-sm,
+.bg-white.border-b.border-gray-200 .material-icons.text-lg,
+.bg-white.border-b.border-gray-200 .material-icons.text-xl,
+.bg-white.border-b.border-gray-200 .material-icons.text-xs,
+.bg-white.border-b.border-gray-200 .material-icons.text-\[10px\],
+.bg-white.border-b.border-gray-200 .material-icons.text-\[16px\] {
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+/* Keep dashboard icons original size */
+body[data-theme="corporate"] .material-icons.text-2xl {
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+body[data-theme="corporate"] .material-icons.text-4xl {
+  font-size: 36px !important;
+  line-height: 1 !important;
+}
+
+/* ULTRA SPECIFIC navigation icon override */
+nav.bg-white.border-b.border-gray-200 .material-icons,
+nav.bg-white.border-b.border-gray-200 .material-icons.text-sm,
+nav.bg-white.border-b.border-gray-200 .material-icons.text-lg,
+nav.bg-white.border-b.border-gray-200 .material-icons.text-xl,
+nav.bg-white.border-b.border-gray-200 .material-icons.text-xs,
+nav.bg-white.border-b.border-gray-200 .material-icons.text-\[10px\],
+nav.bg-white.border-b.border-gray-200 .material-icons.text-\[16px\],
+nav.bg-white.border-b.border-gray-200 .material-icons.text-2xl {
+  font-size: 24px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+/* Ensure date input calendar icons are visible */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: block !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+  display: none !important;
+}
